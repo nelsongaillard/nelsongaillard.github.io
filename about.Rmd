@@ -1,0 +1,19 @@
+---
+title: "About Me"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Academic Experience
+
+I graduate from University of California, Berkeley in 2024 with a Bachelor of Science in Chemical Biology.
+
+Currently, I am pursuing my Master of Public Health at the Mailman School of Public Health, on track to graduate in May 2026.
+
+## Professional Experience
+
+This summer, I interned at Johnson & Johnson Innovative Medicine in Global Medical Affairs within the Oncology therapeutic area. 
+
+For more information about my academic and professional experience, check out [my resume](Nelson Gaillard Resume 2025.pdf)
