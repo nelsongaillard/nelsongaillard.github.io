@@ -9,6 +9,7 @@ output:
 Poke around for some insights into Homework 4
 
 Find some direct links here:
-- [Problem 1 Experience](about.html)
-- [Problem 2 Dashboard](instacart.html)
+
+- [Problem 1 - About Me](about.html)
+- [Problem 2 - Instacart Dashboard](instacart.html)
 

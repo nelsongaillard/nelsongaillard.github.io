@@ -12,7 +12,7 @@ navbar:
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/nelsongaillard
     - icon: fa-github fa-lg
-      href: http://github.com/<nelsongaillard>/
+      href: http://github.com/nelsongaillard/
 output:
   html_document:
     theme: flatly
