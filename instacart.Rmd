@@ -15,7 +15,7 @@ library(plotly)
 data("instacart")
 ```
 
-Column {data-width=650}
+{data-width=650}
 -----------------------------------------------------------------------
 
 ### Distribution of Total Number of Orders vs. Order Hour of Day by Department
@@ -34,7 +34,7 @@ dept_hour_df |>
           mode = "lines")
 ```
 
-Column {data-width=350}
+{data-width=350}
 -----------------------------------------------------------------------
 
 ### Bar chart of the top 15 most ordered products
