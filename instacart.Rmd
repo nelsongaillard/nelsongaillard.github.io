@@ -18,7 +18,7 @@ data("instacart")
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Distribution of Total Number of Orders vs. Order Hour of Day by Department
 
 ```{r}
 dept_hour_df = instacart |> 
@@ -37,7 +37,7 @@ dept_hour_df |>
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Bar chart of the top 15 most ordered products
 
 ```{r}
 instacart |>
@@ -56,9 +56,29 @@ instacart |>
   )
 ```
 
-### Chart C
+### Box plot distributions of Add-to-Cart Orders by Department
 
 ```{r}
+top10_depts = instacart |>
+  count(department, sort = TRUE) |>
+  slice_head(n = 10) |>
+  pull(department)
 
+instacart |> 
+  filter(department %in% top10_depts) |>
+  plot_ly(
+    x = ~department,
+    y = ~add_to_cart_order,
+    color = ~department,
+    type = "box",
+    boxpoints = "outliers",
+    marker = list(opacity = 0.4),
+    line = list(width = 1)
+  ) |>
+  layout(
+    title = "Add-to-Cart Order by Department (Top 10)",
+    xaxis = list(title = "Department"),
+    yaxis = list(title = "Add-to-Cart Position")
+  )
 ```
 
