@@ -27,14 +27,11 @@ dept_hour_df = instacart |>
   summarize(total_orders = n())
 
 dept_hour_df |> 
-  ggplot(aes(x = order_hour_of_day, y = total_orders, color = department)) +
-  geom_line(size = 1, alpha = 0.8) +
-  labs(
-   title = "Orders by Hour of Day across Departments",
-    x = "Hour of Day",
-    y = "Number of Orders",
-    color = "Department"
-  )
+  plot_ly(x = ~order_hour_of_day, 
+          y = ~total_orders, 
+          color = ~department,
+          type = "scatter",
+          mode = "lines")
 ```
 
 Column {data-width=350}
@@ -43,7 +40,20 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
-
+instacart |>
+  count(product_name, sort = TRUE) |>
+  slice_head(n = 15) |>
+  plot_ly(
+    x = ~reorder(product_name, n),
+    y = ~n,
+    type = "bar",
+    orientation = "v"
+  ) |>
+  layout(
+    title = "Top 15 Most Ordered Products",
+    xaxis = list(title = "Product"),
+    yaxis = list(title = "Orders")
+  )
 ```
 
 ### Chart C
