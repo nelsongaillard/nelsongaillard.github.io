@@ -266,7 +266,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="http://github.com/&lt;nelsongaillard&gt;/">
+  <a href="http://github.com/nelsongaillard/">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -289,6 +289,27 @@ $(document).ready(function () {
 <h2>Column</h2>
 <div id="chart-a" class="section level3">
 <h3>Chart A</h3>
+<pre class="r"><code>dept_hour_df = instacart |&gt; 
+  group_by(department, order_hour_of_day) |&gt; 
+  filter(!is.na(department) &amp; !is.na(order_hour_of_day)) |&gt; 
+  summarize(total_orders = n())</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;department&#39;. You can override using the
+## `.groups` argument.</code></pre>
+<pre class="r"><code>dept_hour_df |&gt; 
+  ggplot(aes(x = order_hour_of_day, y = total_orders, color = department)) +
+  geom_line(size = 1, alpha = 0.8) +
+  labs(
+   title = &quot;Orders by Hour of Day across Departments&quot;,
+    x = &quot;Hour of Day&quot;,
+    y = &quot;Number of Orders&quot;,
+    color = &quot;Department&quot;
+  )</code></pre>
+<pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<p><img src="instacart_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 </div>
 </div>
 <div id="column-1" class="section level2" data-width="350">
